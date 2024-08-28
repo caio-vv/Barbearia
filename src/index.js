@@ -9,6 +9,15 @@ app.post("/barbearia", cep_endereco, (req, res) => {
     res.json(req.body)
 })
 
+
+app.get("/cliente", (req, res) => {
+    res.json(cliente_controller.index())
+})
+
+app.get("cliente/:id", (req, res) => {
+    
+})
+
 app.listen(port, () => {
     console.log("servidor rodando")
 })

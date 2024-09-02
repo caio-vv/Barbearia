@@ -1,20 +1,5 @@
 const db = [];
-const usuario_controller = require("./usuario"); // Corrigir de acordo com o nome correto
-let nextId = 1;
-
-const model = (rede, id = nextId++) => {
-  if (
-    rede.nome != undefined &&
-    rede.nome != "" &&
-    usuario_controller.show(rede.usuario_id)
-  ) {
-    return {
-      id,
-      rede: rede.nome,
-      id_usuario: rede.usuario_id,
-    };
-  }
-};
+const model = require("../models/rede.js")
 
 const store = (body) => {
   const novo = model(body);
